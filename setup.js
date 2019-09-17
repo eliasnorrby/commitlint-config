@@ -45,7 +45,28 @@ module.exports = {
 if (!fs.existsSync("commitlint.config.js"))
   fs.writeFileSync("commitlint.config.js", config, "utf8");
 
+const gitmessage = `\
+
+
+# type(scope?): subject  #scope is optional
+# Real world examples can look like this:
+
+#   chore: run tests on travis ci
+#   fix(server): send cors headers
+#   feat(blog): add comment section
+
+# type can be one of:
+# build | ci | chore | docs | feat | fix | perf | refactor | revert | style | test
+`;
+
+fs.writeFileSync(".gitmessage", gitmessage, "utf8");
+
+require("child_process").execSync("git config commit.template .gitmessage", {
+  stdio: "inherit",
+});
+
+console.log("Installing @commitlint/{cli,config-conventional} and husky");
 require("child_process").execSync(
-  "npm install --save-dev @commitlint/cli @commitlint/config-conventional",
+  "npm install --save-dev @commitlint/cli @commitlint/config-conventional husky",
   { stdio: "inherit" }
 );

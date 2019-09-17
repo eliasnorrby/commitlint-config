@@ -3,7 +3,9 @@
   "version": "0.0.0-development",
   "description": "",
   "main": "index.js",
+  "bin": "setup.js",
   "scripts": {
+    "lint": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "semantic-release": "semantic-release"
   },
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/eliasnorrby/commitlint-config#readme",
   "devDependencies": {
-    "semantic-release": "^15.13.24"
+    "semantic-release": "^15.13.24",
+    "typescript": "^3.6.3"
   }
 }
