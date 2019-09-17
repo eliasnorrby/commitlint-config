@@ -1,0 +1,25 @@
+sudo: false
+
+language: "node_js"
+
+node_js:
+  - 8
+  - 11
+
+script:
+  - npm run lint
+  - ./setup.test.sh
+
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      if: branch = master
+      node_js: lts/*
+      # Overwrite the default `script` step to skip the tests
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
