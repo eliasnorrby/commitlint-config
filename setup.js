@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const log = msg => console.log(">> \x1b[36m%s\x1b[0m", msg);
+
 const fs = require("fs");
 if (!fs.existsSync("package.json")) {
   console.error(
@@ -29,15 +31,14 @@ if (msghookDefined) {
     newHusky.hooks = { ...husky.hooks, ...newHusky.hooks };
   }
   packageJson.husky = newHusky;
-  console.log("Added commitlint to git hook");
-  // console.log("pkg: ", JSON.stringify(packageJson, null, 2));
+  log("Added commitlint to git hook");
   fs.writeFileSync("package.json", JSON.stringify(packageJson, null, 2));
-  console.log("package.json saved");
+  log("package.json saved");
 }
 
 const config = `\
 module.exports = {
-  extends: ["@commitlint/config-conventional"],
+  extends: ["@eliasnorrby/commitlint-config"],
   // Override rules here
 };
 `;
@@ -61,12 +62,19 @@ const gitmessage = `\
 
 fs.writeFileSync(".gitmessage", gitmessage, "utf8");
 
+log("Setting local git commit message template");
 require("child_process").execSync("git config commit.template .gitmessage", {
   stdio: "inherit",
 });
 
-console.log("Installing @commitlint/{cli,config-conventional} and husky");
+log("Installing peer dependencies (@commitlint/cli, husky)");
 require("child_process").execSync(
-  "npm install --save-dev @commitlint/cli @commitlint/config-conventional husky",
+  "npm install --save-dev @commitlint/cli husky",
+  { stdio: "inherit" }
+);
+
+log("Installing self (@eliasnorrby/commitlint-config)");
+require("child_process").execSync(
+  "npm install --save-dev @eliasnorrby/commitlint-config",
   { stdio: "inherit" }
 );
