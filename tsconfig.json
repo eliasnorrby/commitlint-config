@@ -3,11 +3,8 @@
     "target": "es2017",
     "noEmit": true,
     "strict": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
+    "noImplicitAny": false,
     "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
     "allowJs": true,
     "checkJs": true
   }
