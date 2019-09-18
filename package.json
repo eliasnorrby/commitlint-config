@@ -8,7 +8,11 @@
   "engines": {
     "node": ">=8"
   },
-  "files": ["index.js", "commitlint.config.js", "setup.js"],
+  "files": [
+    "index.js",
+    "commitlint.config.js",
+    "setup.js"
+  ],
   "main": "index.js",
   "bin": "setup.js",
   "scripts": {
@@ -19,7 +23,10 @@
     "type": "git",
     "url": "https://github.com/eliasnorrby/commitlint-config.git"
   },
-  "keywords": ["config", "commitlint"],
+  "keywords": [
+    "config",
+    "commitlint"
+  ],
   "author": "Elias Norrby",
   "license": "ISC",
   "bugs": {
@@ -27,6 +34,8 @@
   },
   "homepage": "https://github.com/eliasnorrby/commitlint-config#readme",
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/git": "^7.0.16",
     "semantic-release": "^15.13.24",
     "typescript": "^3.6.3"
   },
