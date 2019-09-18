@@ -14,22 +14,22 @@ npm init -y
 npx $ORIG_DIR
 ls -a
 
-FILE_NAME="commitlint.config.js"
-echo "'$FILE_NAME' should exist"
-[ -e "$FILE_NAME" ]
+CONFIG_FILE="commitlint.config.js"
+echo "'$CONFIG_FILE' should exist"
+[ -e "$CONFIG_FILE" ]
 
-FILE_NAME=".gitmessage"
-echo "'$FILE_NAME' should exist"
-[ -e "$FILE_NAME" ]
+MESSAGE_FILE=".gitmessage"
+echo "'$MESSAGE_FILE' should exist"
+[ -e "$MESSAGE_FILE" ]
 
-echo "contents of $FILE_NAME"
-cat "$FILE_NAME"
+echo "contents of $MESSAGE_FILE"
+cat "$MESSAGE_FILE"
 
 echo "'commit.template' should be set"
 git config commit.template
 
+echo "'@eliasnorrby/commitlint-config should be installed"
+[ -d "node_modules/@eliasnorrby/commitlint-config" ]
+
 echo "'@commitlint/cli' should be installed"
 [ -d "node_modules/@commitlint/cli" ]
-
-echo "'@commitlint/config-conventional' should be installed"
-[ -d "node_modules/@commitlint/config-conventional" ]
