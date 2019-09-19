@@ -1,0 +1,7 @@
+# Added by @eliasnorrby/prettier-config
+dist/
+build/
+coverage/
+node_modules/
+package*.json
+yarn-lock.json

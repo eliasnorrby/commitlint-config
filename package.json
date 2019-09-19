@@ -34,9 +34,11 @@
   "homepage": "https://github.com/eliasnorrby/commitlint-config#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
+    "@eliasnorrby/prettier-config": "^1.5.0",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
     "husky": "^3.0.5",
+    "prettier": "^1.18.2",
     "semantic-release": "^15.13.24",
     "typescript": "^3.6.3"
   },
@@ -46,5 +48,6 @@
   },
   "dependencies": {
     "@commitlint/config-conventional": "^8.2.0"
-  }
+  },
+  "prettier": "@eliasnorrby/prettier-config"
 }
