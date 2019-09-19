@@ -5,7 +5,7 @@ const log = msg => console.log(">> \x1b[36m%s\x1b[0m", msg);
 const fs = require("fs");
 if (!fs.existsSync("package.json")) {
   console.error(
-    "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first."
+    "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first.",
   );
   process.exit(1);
 }
@@ -19,7 +19,7 @@ const msghookDefined = Boolean(hooksDefined && husky.hooks["commit-msg"]);
 if (msghookDefined) {
   console.log(
     "commit-msg hook already configured: ",
-    husky.hooks["commit-msg"]
+    husky.hooks["commit-msg"],
   );
 } else {
   const newHusky = {
@@ -70,11 +70,11 @@ require("child_process").execSync("git config commit.template .gitmessage", {
 log("Installing peer dependencies (@commitlint/cli, husky)");
 require("child_process").execSync(
   "npm install --save-dev @commitlint/cli husky",
-  { stdio: "inherit" }
+  { stdio: "inherit" },
 );
 
 log("Installing self (@eliasnorrby/commitlint-config)");
 require("child_process").execSync(
   "npm install --save-dev @eliasnorrby/commitlint-config",
-  { stdio: "inherit" }
+  { stdio: "inherit" },
 );
