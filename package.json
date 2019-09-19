@@ -1,7 +1,7 @@
 {
   "name": "@eliasnorrby/commitlint-config",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "My commitlint config",
   "publishConfig": {
     "access": "public"
   },
@@ -10,7 +10,6 @@
   },
   "files": [
     "index.js",
-    "commitlint.config.js",
     "setup.js"
   ],
   "main": "index.js",
@@ -34,8 +33,10 @@
   },
   "homepage": "https://github.com/eliasnorrby/commitlint-config#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
+    "husky": "^3.0.5",
     "semantic-release": "^15.13.24",
     "typescript": "^3.6.3"
   },
