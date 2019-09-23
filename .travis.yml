@@ -1,22 +1,25 @@
 sudo: false
 language: node_js
 node_js:
-- 8
-- 11
+  - 8
+  - 11
 script:
-- npm run lint
-- "./setup.test.sh"
+  - npm run lint
+  - "./setup.test.sh"
 jobs:
   include:
-  - stage: release
-    if: branch = master
-    node_js: lts/*
-    script: skip
-    deploy:
-      provider: script
-      skip_cleanup: true
-      script:
-      - npx semantic-release
+    - stage: release
+      if: branch = master
+      node_js: lts/*
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
 notifications:
   slack:
-    secure: SUzH83RJhGdrmDrKUbhCb8S9mY693rDGYiB8EapyfgrlQdHeMtvf6RAG9aSVgJd8ZGsXCykm3snN8c+/huM9DvPgV5rY3vvKLBFotqa5VG6YL/vkcuR3FfwQcShiR/bpX0s7swPWDXUgyBzqqAMWhIao6mmWFt/2kUc9+gqm1VbNOvxhBiloFwCpnzH+p6DDJhnbCn06uClYkmw0bu659njVDZv4sxJSySsJkzSRqv8MKfWYt00vI7iTH4HjTus7zox1fCr30txDShDBoloBwGyhtxWjeJFOr8067y6A9WXdA8hY7ypOPoyw/qrXj04OPtAYRZ7FswOBTH5SlCeqSXy2p2Upqoi7FSSKCy1rW8ubg4cVLbj5m/QWKb38+uLsbeyG3pYSJ4zqYzzXh0I92YEDkTU/8RyC5atTJCpANNkaASP58G0skA6A2ZzHJlWXyi7H4RE16he5yNrHPgz0cxHduCYQhOCTolS3yNP18AKj0GAnITH/31QvU1lQ4IKzSgzxsopQ/QzBDw5pcw5aalMVzF6nQDqCadJsSCUsN0FqH5K/gsGT8pSLR1GQsW079IRw5B+muL9JPdCJGccYkk7K4h+4Ihtdkx1JQFcg/ypZHK/iXTCkA2riMkIWCOHqxVxxnAMROS21PNuf/j7A4PM9BRd6T9Dnc3wZaPbnRmM=
+    rooms:
+      - secure: Y4oy4BzkKj4w3+72h4rGmKsXcsMSCHFW653bLdkcyR4JHUGB/tFd3Apz7esEhPw6JF94tUrDsHQ5i7J4Jh0o2GjzihC5zUmfgYxksIoxV+Eb3gJTOpYvkMH2vI4EhDaTDxqwRaKBoQy0zg17j2Ep2S8kEGJ/gMQcBZL3nJstznvywHWgL3kmfpCghyarAGJIhKmaOa6jd1anIasa56AU2Gf9OLB4dJQ5fl83YVjde4dvSONK+E57vrXNZ4Hi3zTn9dxLBscPs7AEbRVDPnI9cErXZ0Vt/cRWs8b9MMHv7lNOjSzOpkcBf+WnNRe4bNq6iljNbLJbXRL9Y7sI/JJQUU3eRX2d7rBTK6cSSGq+TXBQ4tiOCpGgKL0bytfAZk8romkTV4NTmqL2Bp5RsPkmG5QjdubQ+dRjUk3sy+2EyjLNnta6+JSVvbzbcF/8PURGzdfTkPmzghK32zFRGr8YMcnI84EZhdRIZE4ltlDTrjDvu/sxjWwoIwCbzxpS0f/auy1jTKXl+PkAdG46PSMzJz24LdY3FBrpORAtbE2+FuvmfPZ2ZnZGZauMngEDDFDSfrtOw89LYEGRxsAC7yFxUYiia3IBDHN89xPvVGFid0dc1R3LLTx1rkfmWDxQAxdu48FOr/Lw66gvfFzp4VKXLZtmOQotD0RXuN2RtG4Ga/I=
+    template:
+      - "Build <%{build_url}|%{result}> for %{repository_slug}@%{branch} (<%{compare_url}|%{commit}>)"
