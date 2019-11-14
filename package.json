@@ -10,7 +10,8 @@
   },
   "files": [
     "index.js",
-    "setup.js"
+    "setup.js",
+    ".gitmessage"
   ],
   "main": "index.js",
   "bin": "setup.js",
