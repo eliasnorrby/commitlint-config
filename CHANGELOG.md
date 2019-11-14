@@ -1,3 +1,11 @@
+# [2.2.0](https://github.com/eliasnorrby/commitlint-config/compare/v2.1.0...v2.2.0) (2019-11-14)
+
+
+### Features
+
+* improve script logging ([28e83ec](https://github.com/eliasnorrby/commitlint-config/commit/28e83ec))
+* use yarn if yarn.lock is detected ([5cb94a7](https://github.com/eliasnorrby/commitlint-config/commit/5cb94a7))
+
 # [2.1.0](https://github.com/eliasnorrby/commitlint-config/compare/v2.0.2...v2.1.0) (2019-11-14)
 
 
