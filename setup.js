@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-const yargs = require("yargs");
 const path = require("path");
 const fs = require("fs");
+const chalk = require("chalk");
+const yargs = require("yargs");
 const hasYarn = require("has-yarn")();
 
 const pkgInstall = hasYarn ? "yarn add" : "npm install";
@@ -23,11 +24,21 @@ yargs
 
 const argv = yargs.argv;
 
-const log = msg => console.log(">> \x1b[36m%s\x1b[0m", msg);
+// Set up logging methods
+const log = {
+  info: msg =>
+    console.log(`${chalk.bgGreen.black(" INFO ")} ${chalk.green(msg)}`),
+  warn: msg =>
+    console.log(`${chalk.bgYellow.black(" WARN ")} ${chalk.yellow(msg)}`),
+  skip: msg => console.log(`${chalk.bgGray(" SKIP ")} ${msg}`),
+  error: msg =>
+    console.log(`${chalk.bgRed.black(" ERROR ")} ${chalk.red(msg)}`),
+};
+
 const packageName = "@eliasnorrby/commitlint-config";
 
 if (!fs.existsSync("package.json")) {
-  console.error(
+  log.error(
     "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first.",
   );
   process.exit(1);
@@ -40,10 +51,7 @@ const hooksDefined = Boolean(husky && husky.hooks);
 const msghookDefined = Boolean(hooksDefined && husky.hooks["commit-msg"]);
 
 if (msghookDefined) {
-  console.log(
-    "commit-msg hook already configured: ",
-    husky.hooks["commit-msg"],
-  );
+  log.skip(`commit-msg hook already configured: ${husky.hooks["commit-msg"]}`);
 } else {
   const newHusky = {
     hooks: {
@@ -54,9 +62,9 @@ if (msghookDefined) {
     newHusky.hooks = { ...husky.hooks, ...newHusky.hooks };
   }
   packageJson.husky = newHusky;
-  log("Added commitlint to git hook");
+  log.info("Added commitlint to git hook");
   fs.writeFileSync("package.json", JSON.stringify(packageJson, null, 2));
-  log("package.json saved");
+  log.info("package.json saved");
 }
 
 const config = argv.install
@@ -81,28 +89,28 @@ const gitmessage = fs.readFileSync(
 
 fs.writeFileSync(".gitmessage", gitmessage, "utf8");
 
-log("Setting local git commit message template");
+log.info("Setting local git commit message template");
 require("child_process").execSync("git config commit.template .gitmessage", {
   stdio: "inherit",
 });
 
-log("Installing peer dependencies (@commitlint/cli, husky)");
+log.info("Installing peer dependencies (@commitlint/cli, husky)");
 require("child_process").execSync(`${pkgInstallDev} @commitlint/cli husky`, {
   stdio: "inherit",
 });
 
 if (argv.install) {
-  log(`Installing self (${packageName})`);
+  log.info(`Installing self (${packageName})`);
   require("child_process").execSync(`${pkgInstallDev} ${packageName}`, {
     stdio: "inherit",
   });
 } else {
-  log("Skipping install of self");
+  log.skip("Skipping install of self");
   const baseConfig = "@commitlint/config-conventional";
-  log(`Installing conventional config (${baseConfig})`);
+  log.info(`Installing conventional config (${baseConfig})`);
   require("child_process").execSync(`${pkgInstallDev} ${baseConfig}`, {
     stdio: "inherit",
   });
 }
 
-log("Done!");
+log.info("Done!");
