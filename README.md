@@ -23,6 +23,12 @@ intalling `husky`, populating the `husky.hooks.commit-msg` field in
 `package.json`, setting the git commit template to `.gitmessage` and writing the
 config to `commitlint.config.js`.
 
+### `--no-install`
+
+Run setup with the `--no-install` flag to avoid installing this package as a
+dependency. Your `commitling.config.js` will instead extend
+`@commitlint/config-conventional`.
+
 ## Manually
 
 Install the package
