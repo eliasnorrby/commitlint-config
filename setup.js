@@ -2,6 +2,10 @@
 const yargs = require("yargs");
 const path = require("path");
 const fs = require("fs");
+const hasYarn = require("has-yarn")();
+
+const pkgInstall = hasYarn ? "yarn add" : "npm install";
+const pkgInstallDev = `${pkgInstall} -D`;
 
 yargs
   .alias("v", "version")
@@ -83,21 +87,20 @@ require("child_process").execSync("git config commit.template .gitmessage", {
 });
 
 log("Installing peer dependencies (@commitlint/cli, husky)");
-require("child_process").execSync(
-  "npm install --save-dev @commitlint/cli husky",
-  { stdio: "inherit" },
-);
+require("child_process").execSync(`${pkgInstallDev} @commitlint/cli husky`, {
+  stdio: "inherit",
+});
 
 if (argv.install) {
   log(`Installing self (${packageName})`);
-  require("child_process").execSync(`npm install --save-dev ${packageName}`, {
+  require("child_process").execSync(`${pkgInstallDev} ${packageName}`, {
     stdio: "inherit",
   });
 } else {
   log("Skipping install of self");
   const baseConfig = "@commitlint/config-conventional";
   log(`Installing conventional config (${baseConfig})`);
-  require("child_process").execSync(`npm install --save-dev ${baseConfig}`, {
+  require("child_process").execSync(`${pkgInstallDev} ${baseConfig}`, {
     stdio: "inherit",
   });
 }
