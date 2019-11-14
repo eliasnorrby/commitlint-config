@@ -55,8 +55,11 @@ function no_install_test {
 
   common_test
 
-  echo "'@eliasnorrby/commitlint-config should not be installed"
+  echo "'@eliasnorrby/commitlint-config' should not be installed"
   [ ! -d "node_modules/@eliasnorrby/commitlint-config" ]
+
+  echo "'@commitlint/config-conventional' should be installed"
+  [ -d "node_modules/@commitlint/config-conventional" ]
 }
 
 function help_test {

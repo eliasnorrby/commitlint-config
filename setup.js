@@ -95,6 +95,11 @@ if (argv.install) {
   });
 } else {
   log("Skipping install of self");
+  const baseConfig = "@commitlint/config-conventional";
+  log(`Installing conventional config (${baseConfig})`);
+  require("child_process").execSync(`npm install --save-dev ${baseConfig}`, {
+    stdio: "inherit",
+  });
 }
 
 log("Done!");
