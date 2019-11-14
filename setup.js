@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 const yargs = require("yargs");
+const path = require("path");
+const fs = require("fs");
 
 yargs
   .alias("v", "version")
@@ -20,7 +22,6 @@ const argv = yargs.argv;
 const log = msg => console.log(">> \x1b[36m%s\x1b[0m", msg);
 const packageName = "@eliasnorrby/commitlint-config";
 
-const fs = require("fs");
 if (!fs.existsSync("package.json")) {
   console.error(
     "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first.",
@@ -69,19 +70,10 @@ module.exports = {
 if (!fs.existsSync("commitlint.config.js"))
   fs.writeFileSync("commitlint.config.js", config, "utf8");
 
-const gitmessage = `\
-
-
-# type(scope?): subject  #scope is optional
-# Real world examples can look like this:
-
-#   chore: run tests on travis ci
-#   fix(server): send cors headers
-#   feat(blog): add comment section
-
-# type can be one of:
-# build | ci | chore | docs | feat | fix | perf | refactor | revert | style | test
-`;
+const gitmessage = fs.readFileSync(
+  path.resolve(__dirname, ".gitmessage"),
+  "utf8",
+);
 
 fs.writeFileSync(".gitmessage", gitmessage, "utf8");
 
