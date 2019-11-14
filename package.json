@@ -39,6 +39,7 @@
     "@commitlint/cli": "^8.2.0",
     "@eliasnorrby/prettier-config": "^2.1.1",
     "@eliasnorrby/semantic-release-config": "^2.0.0",
+    "@types/yargs": "^13.0.3",
     "husky": "^3.0.5",
     "prettier": "^1.18.2",
     "semantic-release": "^15.13.24",
@@ -50,6 +51,7 @@
   },
   "dependencies": {
     "@commitlint/config-conventional": "^8.2.0",
+    "has-yarn": "^2.1.0",
     "yargs": "^14.2.0"
   }
 }
