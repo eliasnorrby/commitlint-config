@@ -1,6 +1,24 @@
 #!/usr/bin/env node
+const yargs = require("yargs");
+
+yargs
+  .alias("v", "version")
+  .usage("Usage: $0 [options]")
+  .help("h")
+  .alias("h", "help")
+  .option("i", {
+    describe: "Install this package",
+    type: "boolean",
+    alias: "install",
+    default: true,
+  })
+  .describe("no-install", "Skip installing this package")
+  .strict(true);
+
+const argv = yargs.argv;
 
 const log = msg => console.log(">> \x1b[36m%s\x1b[0m", msg);
+const packageName = "@eliasnorrby/commitlint-config";
 
 const fs = require("fs");
 if (!fs.existsSync("package.json")) {
@@ -36,12 +54,17 @@ if (msghookDefined) {
   log("package.json saved");
 }
 
-const config = `\
+const config = argv.install
+  ? `\
 module.exports = {
   extends: ["@eliasnorrby/commitlint-config"],
   // Override rules here
-};
-`;
+};`
+  : `\
+module.exports = {
+  extends: ["@commitlint/config-conventional"],
+  // Add rules here
+}`;
 
 if (!fs.existsSync("commitlint.config.js"))
   fs.writeFileSync("commitlint.config.js", config, "utf8");
@@ -73,8 +96,13 @@ require("child_process").execSync(
   { stdio: "inherit" },
 );
 
-log("Installing self (@eliasnorrby/commitlint-config)");
-require("child_process").execSync(
-  "npm install --save-dev @eliasnorrby/commitlint-config",
-  { stdio: "inherit" },
-);
+if (argv.install) {
+  log(`Installing self (${packageName})`);
+  require("child_process").execSync(`npm install --save-dev ${packageName}`, {
+    stdio: "inherit",
+  });
+} else {
+  log("Skipping install of self");
+}
+
+log("Done!");
