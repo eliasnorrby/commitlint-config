@@ -65,6 +65,6 @@ function help_test {
 
 install_test
 
-# no_install_test
+no_install_test
 
 help_test
