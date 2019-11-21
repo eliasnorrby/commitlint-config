@@ -72,12 +72,14 @@ const config = argv.install
 module.exports = {
   extends: ["@eliasnorrby/commitlint-config"],
   // Override rules here
-};`
+};
+`
   : `\
 module.exports = {
   extends: ["@commitlint/config-conventional"],
   // Add rules here
-}`;
+}
+`;
 
 if (!fs.existsSync("commitlint.config.js"))
   fs.writeFileSync("commitlint.config.js", config, "utf8");
