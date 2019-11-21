@@ -53,6 +53,6 @@
     "@commitlint/config-conventional": "^8.2.0",
     "chalk": "^3.0.0",
     "has-yarn": "^2.1.0",
-    "yargs": "^14.2.0"
+    "yargs": "^15.0.2"
   }
 }
