@@ -1,3 +1,11 @@
+## [2.2.2](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.1...v2.2.2) (2019-11-21)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 14.2.0 to 15.0.2 ([c9d2746](https://github.com/eliasnorrby/commitlint-config/commit/c9d2746e969890b7cfb4d2d7acd905c4da4d457a))
+* add missing newlines in config file [skip ci] ([2aa7ea8](https://github.com/eliasnorrby/commitlint-config/commit/2aa7ea8e10b8856490dd138ca786a28af696be76))
+
 ## [2.2.1](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.0...v2.2.1) (2019-11-21)
 
 
