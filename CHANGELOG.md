@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.0...v2.2.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump https-proxy-agent from 2.2.2 to 2.2.4 ([98a2269](https://github.com/eliasnorrby/commitlint-config/commit/98a2269))
+
 # [2.2.0](https://github.com/eliasnorrby/commitlint-config/compare/v2.1.0...v2.2.0) (2019-11-14)
 
 
