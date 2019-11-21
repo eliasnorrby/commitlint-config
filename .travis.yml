@@ -1,13 +1,12 @@
 sudo: false
 language: node_js
-node_js:
-  - 8
-  - 11
-script:
-  - npm run lint
-  - "./setup.test.sh"
 jobs:
   include:
+    - stage: test
+      node_js: lts/*
+      script:
+        - npm run lint
+        - "./setup.test.sh"
     - stage: release
       if: branch = master
       node_js: lts/*
