@@ -30,7 +30,7 @@
     "commitlint"
   ],
   "author": "Elias Norrby",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/eliasnorrby/commitlint-config/issues"
   },
