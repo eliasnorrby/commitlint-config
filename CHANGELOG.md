@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.2...v2.2.3) (2019-12-13)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm from 6.13.1 to 6.13.4 ([8646917](https://github.com/eliasnorrby/commitlint-config/commit/8646917f03bb944a0ff603f3efbac3cdd227933e))
+
 ## [2.2.2](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.1...v2.2.2) (2019-11-21)
 
 
