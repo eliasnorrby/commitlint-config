@@ -1,3 +1,11 @@
+# [2.3.0](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.3...v2.3.0) (2019-12-19)
+
+
+### Features
+
+* add spinner and silence output ([b093499](https://github.com/eliasnorrby/commitlint-config/commit/b093499091e9349f9b30d0c7bfe1f8cdbb74df70))
+* use @eliasnorrby/log-util during setup ([bd0c107](https://github.com/eliasnorrby/commitlint-config/commit/bd0c1076ba6a5b4bbe0172fb96df925a6d8d9df3))
+
 ## [2.2.3](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.2...v2.2.3) (2019-12-13)
 
 
