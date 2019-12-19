@@ -4,6 +4,9 @@ const fs = require("fs");
 const yargs = require("yargs");
 const hasYarn = require("has-yarn")();
 
+const ora = require("ora");
+const execa = require("execa");
+
 const { log } = require("@eliasnorrby/log-util");
 
 const pkgInstall = hasYarn ? "yarn add" : "npm install";
@@ -86,23 +89,30 @@ require("child_process").execSync("git config commit.template .gitmessage", {
   stdio: "inherit",
 });
 
-log.info("Installing peer dependencies (@commitlint/cli, husky)");
-require("child_process").execSync(`${pkgInstallDev} @commitlint/cli husky`, {
-  stdio: "inherit",
+const spinner = ora({
+  text: "Installing...",
+  spinner: "growHorizontal",
+  color: "blue",
 });
 
-if (argv.install) {
-  log.info(`Installing self (${packageName})`);
-  require("child_process").execSync(`${pkgInstallDev} ${packageName}`, {
-    stdio: "inherit",
-  });
-} else {
-  log.skip("Skipping install of self");
-  const baseConfig = "@commitlint/config-conventional";
-  log.info(`Installing conventional config (${baseConfig})`);
-  require("child_process").execSync(`${pkgInstallDev} ${baseConfig}`, {
-    stdio: "inherit",
-  });
-}
+(async () => {
+  log.info("Installing peer dependencies (@commitlint/cli, husky)");
+  spinner.start();
+  await execa.command(`${pkgInstallDev} @commitlint/cli husky`);
+  spinner.stop();
 
-log.info("Done!");
+  if (argv.install) {
+    log.info(`Installing self (${packageName})`);
+    spinner.start();
+    await execa.command(`${pkgInstallDev} ${packageName}`);
+    spinner.stop();
+  } else {
+    log.skip("Skipping install of self");
+    const baseConfig = "@commitlint/config-conventional";
+    log.info(`Installing conventional config (${baseConfig})`);
+    spinner.start();
+    await execa.command(`${pkgInstallDev} ${baseConfig}`);
+    spinner.stop();
+  }
+  log.info("Done!");
+})();
