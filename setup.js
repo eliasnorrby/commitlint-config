@@ -120,5 +120,6 @@ const runCommand = async cmd => {
     log.info(`Installing conventional config (${baseConfig})`);
     await runCommand(`${pkgInstallDev} ${baseConfig}`);
   }
-  log.info("Done!");
+
+  log.ok("Done!");
 })();
