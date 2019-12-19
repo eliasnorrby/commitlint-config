@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.0...v2.3.1) (2019-12-19)
+
+
+### Bug Fixes
+
+* wrap installs in try/catch blocks ([3107fe6](https://github.com/eliasnorrby/commitlint-config/commit/3107fe6cdc2af6404c0180d85cabf9d3f33f86f9))
+
 # [2.3.0](https://github.com/eliasnorrby/commitlint-config/compare/v2.2.3...v2.3.0) (2019-12-19)
 
 
