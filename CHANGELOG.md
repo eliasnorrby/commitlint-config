@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.1...v2.3.2) (2019-12-19)
+
+
+### Bug Fixes
+
+* exit consistently (use log.ok) ([2dde3a6](https://github.com/eliasnorrby/commitlint-config/commit/2dde3a611ad9fddb40dd4d05e44b351aa0979569))
+
 ## [2.3.1](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.0...v2.3.1) (2019-12-19)
 
 
