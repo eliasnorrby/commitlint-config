@@ -95,24 +95,30 @@ const spinner = ora({
   color: "blue",
 });
 
+const runCommand = async cmd => {
+  try {
+    spinner.start();
+    await execa.command(cmd);
+    spinner.stop();
+  } catch (error) {
+    spinner.stop();
+    log.fail(error);
+    process.exit(1);
+  }
+};
+
 (async () => {
   log.info("Installing peer dependencies (@commitlint/cli, husky)");
-  spinner.start();
-  await execa.command(`${pkgInstallDev} @commitlint/cli husky`);
-  spinner.stop();
+  await runCommand(`${pkgInstallDev} @commitlint/cli husky`);
 
   if (argv.install) {
     log.info(`Installing self (${packageName})`);
-    spinner.start();
-    await execa.command(`${pkgInstallDev} ${packageName}`);
-    spinner.stop();
+    await runCommand(`${pkgInstallDev} ${packageName}`);
   } else {
     log.skip("Skipping install of self");
     const baseConfig = "@commitlint/config-conventional";
     log.info(`Installing conventional config (${baseConfig})`);
-    spinner.start();
-    await execa.command(`${pkgInstallDev} ${baseConfig}`);
-    spinner.stop();
+    await runCommand(`${pkgInstallDev} ${baseConfig}`);
   }
   log.info("Done!");
 })();
