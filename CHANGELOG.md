@@ -1,3 +1,10 @@
+## [2.3.5](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.4...v2.3.5) (2020-01-22)
+
+
+### Bug Fixes
+
+* update husky peer dependency range ([a48992e](https://github.com/eliasnorrby/commitlint-config/commit/a48992eecf7c065c9643cb276c5bcc40033cca4a))
+
 ## [2.3.4](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.3...v2.3.4) (2020-01-07)
 
 
