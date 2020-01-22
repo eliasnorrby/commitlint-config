@@ -47,7 +47,7 @@
   },
   "peerDependencies": {
     "@commitlint/cli": "8.x",
-    "husky": "4.x"
+    "husky": "3.x || 4.x"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^8.2.0",
