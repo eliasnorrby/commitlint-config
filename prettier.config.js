@@ -1,4 +1,4 @@
 module.exports = {
-  ...require("@eliasnorrby/prettier-config"),
+  ...require('@eliasnorrby/prettier-config'),
   // Override rules here
-};
+}

@@ -45,7 +45,7 @@ and add the configuration to `commitlint.config.js`.
 ### `commitlint.config.js`
 
 ```js
-module.exports = require("@eliasnorrby/commitlint-config");
+module.exports = require('@eliasnorrby/commitlint-config')
 ```
 
 # Overriding settings
@@ -54,9 +54,9 @@ Just add your overrides to `commitlint.config.js`:
 
 ```js
 module.exports = {
-  ...require("@eliasnorrby/commitlint-config"),
+  ...require('@eliasnorrby/commitlint-config'),
   rules: {
-    "header-max-length": [0, "always", 72],
+    'header-max-length': [0, 'always', 72],
   },
-};
+}
 ```

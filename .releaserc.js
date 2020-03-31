@@ -1,4 +1,4 @@
 module.exports = {
-  extends: ["@eliasnorrby/semantic-release-config"],
+  extends: ['@eliasnorrby/semantic-release-config'],
   // Override rules here
-};
+}

@@ -6,7 +6,7 @@ jobs:
       node_js: lts/*
       script:
         - npm run lint
-        - "./setup.test.sh"
+        - './setup.test.sh'
     - stage: release
       if: branch = master
       node_js: lts/*
@@ -21,6 +21,6 @@ notifications:
     rooms:
       - secure: Y4oy4BzkKj4w3+72h4rGmKsXcsMSCHFW653bLdkcyR4JHUGB/tFd3Apz7esEhPw6JF94tUrDsHQ5i7J4Jh0o2GjzihC5zUmfgYxksIoxV+Eb3gJTOpYvkMH2vI4EhDaTDxqwRaKBoQy0zg17j2Ep2S8kEGJ/gMQcBZL3nJstznvywHWgL3kmfpCghyarAGJIhKmaOa6jd1anIasa56AU2Gf9OLB4dJQ5fl83YVjde4dvSONK+E57vrXNZ4Hi3zTn9dxLBscPs7AEbRVDPnI9cErXZ0Vt/cRWs8b9MMHv7lNOjSzOpkcBf+WnNRe4bNq6iljNbLJbXRL9Y7sI/JJQUU3eRX2d7rBTK6cSSGq+TXBQ4tiOCpGgKL0bytfAZk8romkTV4NTmqL2Bp5RsPkmG5QjdubQ+dRjUk3sy+2EyjLNnta6+JSVvbzbcF/8PURGzdfTkPmzghK32zFRGr8YMcnI84EZhdRIZE4ltlDTrjDvu/sxjWwoIwCbzxpS0f/auy1jTKXl+PkAdG46PSMzJz24LdY3FBrpORAtbE2+FuvmfPZ2ZnZGZauMngEDDFDSfrtOw89LYEGRxsAC7yFxUYiia3IBDHN89xPvVGFid0dc1R3LLTx1rkfmWDxQAxdu48FOr/Lw66gvfFzp4VKXLZtmOQotD0RXuN2RtG4Ga/I=
     template:
-      - "Build <%{build_url}|%{result}> for %{repository_slug}@%{branch} (<%{compare_url}|%{commit}>)"
+      - 'Build <%{build_url}|%{result}> for %{repository_slug}@%{branch} (<%{compare_url}|%{commit}>)'
     on_success: change
     on_failure: always
