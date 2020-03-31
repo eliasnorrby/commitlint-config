@@ -41,7 +41,7 @@
     "@eliasnorrby/semantic-release-config": "^3.0.0",
     "@types/yargs": "^15.0.0",
     "husky": "^4.0.10",
-    "prettier": "^1.18.2",
+    "prettier": "^2.0.2",
     "semantic-release": "^17.0.4",
     "typescript": "^3.6.3"
   },
