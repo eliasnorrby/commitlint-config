@@ -1,3 +1,10 @@
+## [2.3.9](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.8...v2.3.9) (2020-04-08)
+
+
+### Bug Fixes
+
+* **deps:** bump @eliasnorrby/log-util from 1.1.1 to 1.1.2 ([a938cb7](https://github.com/eliasnorrby/commitlint-config/commit/a938cb7e741eef4e5c40b4555e3c344772fdf77c))
+
 ## [2.3.8](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.7...v2.3.8) (2020-03-17)
 
 
