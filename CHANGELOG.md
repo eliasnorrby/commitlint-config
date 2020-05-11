@@ -1,3 +1,10 @@
+## [2.3.11](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.10...v2.3.11) (2020-05-11)
+
+
+### Bug Fixes
+
+* **deps:** bump execa from 4.0.0 to 4.0.1 ([69d1282](https://github.com/eliasnorrby/commitlint-config/commit/69d128247f257126d1f0cb5d7db89dcfe42ada46))
+
 ## [2.3.10](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.9...v2.3.10) (2020-04-22)
 
 
