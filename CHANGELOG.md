@@ -1,3 +1,10 @@
+## [2.3.14](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.13...v2.3.14) (2020-06-23)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/config-conventional from 8.3.4 to 9.0.1 ([50db969](https://github.com/eliasnorrby/commitlint-config/commit/50db969b20cf02a1f9674571eb18453616033ae1))
+
 ## [2.3.13](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.12...v2.3.13) (2020-06-11)
 
 
