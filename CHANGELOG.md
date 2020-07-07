@@ -1,3 +1,10 @@
+## [2.3.15](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.14...v2.3.15) (2020-07-07)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm from 6.14.5 to 6.14.6 ([5dc2f12](https://github.com/eliasnorrby/commitlint-config/commit/5dc2f12da9ebc337374284d63681997311646959))
+
 ## [2.3.14](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.13...v2.3.14) (2020-06-23)
 
 
