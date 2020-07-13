@@ -1,3 +1,10 @@
+## [2.3.19](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.18...v2.3.19) (2020-07-13)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 15.4.0 to 15.4.1 ([d44d156](https://github.com/eliasnorrby/commitlint-config/commit/d44d15694b1fc7dd9c620c30eb6acf4a271f2cd2))
+
 ## [2.3.18](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.17...v2.3.18) (2020-07-08)
 
 
