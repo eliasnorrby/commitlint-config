@@ -1,6 +1,6 @@
 {
   "name": "@eliasnorrby/commitlint-config",
-  "version": "2.3.19",
+  "version": "2.3.20",
   "description": "My commitlint config",
   "publishConfig": {
     "access": "public"
