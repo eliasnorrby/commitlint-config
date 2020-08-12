@@ -1,3 +1,10 @@
+## [2.3.22](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.21...v2.3.22) (2020-08-12)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 4.0.5 to 5.0.0 ([eaa8e0d](https://github.com/eliasnorrby/commitlint-config/commit/eaa8e0d5d3480a7549f185b44dc37077eaafed9a))
+
 ## [2.3.21](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.20...v2.3.21) (2020-07-21)
 
 
