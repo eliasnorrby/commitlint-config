@@ -1,3 +1,10 @@
+## [2.3.25](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.24...v2.3.25) (2020-09-11)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump node-fetch from 2.6.0 to 2.6.1 ([70897bf](https://github.com/eliasnorrby/commitlint-config/commit/70897bfa51b3d66f9120ac64d948b9ffbb1329fa))
+
 ## [2.3.24](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.23...v2.3.24) (2020-09-07)
 
 
