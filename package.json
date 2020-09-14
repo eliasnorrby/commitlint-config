@@ -50,7 +50,7 @@
     "husky": "3.x || 4.x"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^9.0.1",
+    "@commitlint/config-conventional": "^11.0.0",
     "@eliasnorrby/log-util": "^1.1.0",
     "execa": "^4.0.0",
     "has-yarn": "^2.1.0",
