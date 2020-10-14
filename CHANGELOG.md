@@ -1,3 +1,10 @@
+## [2.3.29](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.28...v2.3.29) (2020-10-14)
+
+
+### Bug Fixes
+
+* **deps:** update peer dependency version ([08e62e0](https://github.com/eliasnorrby/commitlint-config/commit/08e62e02e31793af7f6e773e7ebd598ad75b622f))
+
 ## [2.3.28](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.27...v2.3.28) (2020-10-01)
 
 
