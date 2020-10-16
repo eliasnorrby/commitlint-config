@@ -1,3 +1,10 @@
+## [2.3.30](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.29...v2.3.30) (2020-10-16)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump lodash from 4.17.15 to 4.17.20 ([89576de](https://github.com/eliasnorrby/commitlint-config/commit/89576de5b89df43cf598ec989927bb82a64d9c4d))
+
 ## [2.3.29](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.28...v2.3.29) (2020-10-14)
 
 
