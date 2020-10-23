@@ -1,3 +1,10 @@
+## [2.3.33](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.32...v2.3.33) (2020-10-23)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 16.0.3 to 16.1.0 ([9f7cdd8](https://github.com/eliasnorrby/commitlint-config/commit/9f7cdd8838d1318e347b7b8351589c61a5454ef0))
+
 ## [2.3.32](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.31...v2.3.32) (2020-10-19)
 
 
