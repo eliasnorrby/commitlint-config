@@ -1,3 +1,10 @@
+## [2.3.37](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.36...v2.3.37) (2020-11-18)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm-user-validate from 1.0.0 to 1.0.1 ([48a3808](https://github.com/eliasnorrby/commitlint-config/commit/48a3808f5b0355fa0f744428baf5fc2768d91f8f))
+
 ## [2.3.36](https://github.com/eliasnorrby/commitlint-config/compare/v2.3.35...v2.3.36) (2020-11-16)
 
 
