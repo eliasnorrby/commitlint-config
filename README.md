@@ -9,7 +9,7 @@
 My commitlint config. Right now it only extends
 `@commitlint/config-conventional`, but that could change.
 
-:warning: Subject to change in the future.
+:warning: This project is no longer actively maintained :warning:
 
 # Setup
 
