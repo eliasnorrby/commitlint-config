@@ -109,7 +109,8 @@ const runCommand = async (cmd) => {
 
 ;(async () => {
   log.info('Installing peer dependencies (@commitlint/cli, husky)')
-  await runCommand(`${pkgInstallDev} @commitlint/cli husky`)
+  // Match highest peer version listed in package.json
+  await runCommand(`${pkgInstallDev} @commitlint/cli@11.x husky@4.x`)
 
   if (argv.install) {
     log.info(`Installing self (${packageName})`)
