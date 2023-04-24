@@ -36,13 +36,13 @@
   },
   "homepage": "https://github.com/eliasnorrby/commitlint-config#readme",
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
+    "@commitlint/cli": "^17.6.1",
     "@eliasnorrby/prettier-config": "^4.0.0",
     "@eliasnorrby/semantic-release-config": "^3.0.0",
     "@types/yargs": "^15.0.0",
-    "husky": "^4.0.10",
+    "husky": "^8.0.3",
     "prettier": "^2.0.2",
-    "semantic-release": "^17.0.4",
+    "semantic-release": "^21.0.1",
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
